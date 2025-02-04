@@ -67,36 +67,32 @@
     <h1 class="text-2xl font-bold text-white">Anaheim Discovery Inn & Suites</h1>
   </div>
   
-  <!-- Main Container (with slightly reduced top padding) -->
+  <!-- Main Container with mobile-first padding -->
   <div class="max-w-4xl mx-auto pt-16">
-    <!-- Header Section (Hotel title removed from here) -->
+    <!-- Header Section (action buttons and a one-line welcome message) -->
     <header class="text-center mb-8 animate__animated animate__fadeIn">
-      <!-- The header no longer displays the hotel name again -->
-      <!-- Action Buttons for Address & Phone -->
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
-        <!-- Text us Button -->
+      <!-- Action Buttons: Text us, Call us, Direction -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
         <a href="sms:+17145982308" class="inline-block text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
           Text us
         </a>
-        <!-- Call us Button -->
         <a href="tel:+17145334505" class="inline-block text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
           Call us
         </a>
-        <!-- Direction Button -->
         <a href="https://www.google.com/maps/dir/?api=1&destination=1126+W+Katella+Ave,+Anaheim,+CA+92802" target="_blank" class="inline-block text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
           Direction
         </a>
       </div>
-      <div class="text-lg mb-6">
-        We're so happy you chose to stay with us! At Anaheim Discovery Inn & Suites, you're not just a guest – you're family. Whether you're here to experience the magic of Disneyland or attend to business, our friendly team is here to ensure you feel right at home.
+      <!-- One-line Welcome Text -->
+      <div class="text-base mb-6">
+        Welcome to Anaheim Discovery Inn & Suites – your home away from home!
       </div>
     </header>
 
-    <!-- Navigation with Scroll Arrows -->
+    <!-- Navigation with Horizontal Scroll Arrows -->
     <div class="relative mb-8">
-      <!-- Left Arrow Button -->
+      <!-- Left Arrow -->
       <button onclick="scrollNav(-100)" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full">
-        <!-- Left arrow SVG -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
         </svg>
@@ -114,9 +110,8 @@
         <button class="tab" onclick="switchTab('feedback')">Share Your Thoughts</button>
       </nav>
       
-      <!-- Right Arrow Button -->
+      <!-- Right Arrow -->
       <button onclick="scrollNav(100)" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full">
-        <!-- Right arrow SVG -->
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
@@ -133,12 +128,12 @@
             <div class="flex items-center mb-4">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                  d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
               </svg>
               <h3 class="text-xl font-semibold">Wi‑Fi Access</h3>
             </div>
             <p class="text-gray-400">Password: guest123</p>
-            <!-- "Connect Now" Button to open WiFi settings -->
+            <!-- "Connect Now" Button to open Wi-Fi settings -->
             <a id="wifiConnect" href="#" class="inline-block mt-2 bg-[#e3902b] text-white font-bold py-2 px-4 rounded">
               Connect Now
             </a>
@@ -148,7 +143,7 @@
             <div class="flex items-center mb-4">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               <h3 class="text-xl font-semibold">Check‑in/out</h3>
             </div>
@@ -158,7 +153,7 @@
         </div>
       </div>
 
-      <!-- Amenities Section (Pool notice moved here) -->
+      <!-- Amenities Section (Pool notice added here) -->
       <div id="amenities" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">Hotel Amenities</h3>
@@ -166,21 +161,21 @@
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M5 13l4 4L19 7"/>
+                  d="M5 13l4 4L19 7"/>
               </svg>
               Free self‑parking
             </li>
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M5 13l4 4L19 7"/>
+                  d="M5 13l4 4L19 7"/>
               </svg>
               High‑speed Wi‑Fi
             </li>
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M5 13l4 4L19 7"/>
+                  d="M5 13l4 4L19 7"/>
               </svg>
               24/7 Front Desk
             </li>
@@ -298,12 +293,12 @@
         </div>
       </div>
 
-      <!-- Visiting The Park Section (pool notice removed here) -->
+      <!-- Visiting The Park Section (pool notice removed) -->
       <div id="visiting" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">Visiting The Park</h3>
           <p class="text-gray-400 mb-4">
-            If you are visiting Disneyland, you have an option to park the car here in the morning, register at the front desk, and visit the park, which is just a 10-minute walk.
+            If you are visiting Disneyland, you have an option to park the car here in the morning, register at the front desk, and visit the park—all within a 10-minute walk.
           </p>
         </div>
       </div>
@@ -370,7 +365,7 @@
     </div>
   </div>
   
-  <!-- JavaScript for Tab Switching, Navigation Scrolling, and Wi-Fi Button -->
+  <!-- JavaScript: Tab Switching, Navigation Scrolling, Wi-Fi Button Setup -->
   <script>
     function switchTab(tabId) {
       document.querySelectorAll('.tab').forEach(tab => {
@@ -390,17 +385,14 @@
       navBar.scrollBy({ left: amount, behavior: 'smooth' });
     }
     
-    // Set the WiFi Connect button's href based on device (basic detection)
+    // Set the Wi-Fi Connect button's href based on device
     document.addEventListener("DOMContentLoaded", function() {
       const wifiButton = document.getElementById("wifiConnect");
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
-        // iOS: may work in some contexts; note that Safari often blocks such links.
         wifiButton.href = "App-Prefs:root=WIFI";
       } else if (navigator.userAgent.match(/Android/i)) {
-        // Android: open WiFi settings via intent
         wifiButton.href = "intent://settings#Intent;action=android.settings.WIFI_SETTINGS;end";
       } else {
-        // Fallback for other devices
         wifiButton.href = "#";
       }
     });
