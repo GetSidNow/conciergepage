@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anaheim Discovery Inn & Suites</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      --accent-color: #e3902b;
+    }
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .card {
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px -15px var(--accent-color);
+    }
+    .tab {
+      background-color: transparent;
+      color: #fff;
+      border: none;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .tab.active {
+      color: var(--accent-color);
+      border-bottom: 2px solid var(--accent-color);
+    }
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .accent {
+      color: var(--accent-color);
+    }
+    .icon {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent-color);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    a {
+      color: var(--accent-color);
+    }
+  </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+  <!-- Fixed Top Bar with Hotel Name -->
+  <div class="fixed top-0 left-0 right-0 bg-black z-50 p-4 text-center border-b border-[var(--accent-color)]">
+    <h1 class="text-2xl font-bold text-[var(--accent-color)]">Anaheim Discovery Inn & Suites</h1>
+  </div>
+  
+  <!-- Main Container (reduced top padding so there's less space before the address) -->
+  <div class="max-w-4xl mx-auto pt-16">
+    <!-- Header Section -->
+    <header class="text-center mb-8 animate__animated animate__fadeIn">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[var(--accent-color)] to-white">
+        Anaheim Discovery Inn & Suites
+      </h1>
+      <p class="text-lg text-gray-400 mb-2">1126 W Katella Ave, Anaheim, CA 92802</p>
+      <p class="text-lg text-gray-400 mb-4">(714) 533-4505</p>
+      <div class="text-lg mb-6">
+        We're so happy you chose to stay with us! At Anaheim Discovery Inn & Suites, you're not just a guest – you're family. Whether you're here to experience the magic of Disneyland or attend to business, our friendly team is here to ensure you feel right at home.
+      </div>
+      <!-- "Message Us" Button using inline style to ensure the brand orange (#e3902b) is applied -->
+      <a href="sms:+17145982308" class="inline-block mt-4 text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
+        Message Us
+      </a>
+    </header>
+
+    <!-- Navigation with Scroll Arrows -->
+    <div class="relative mb-8">
+      <!-- Left Arrow Button -->
+      <button onclick="scrollNav(-100)" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full">
+        <!-- Left arrow SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      
+      <!-- Navigation Bar -->
+      <nav id="navBar" class="flex overflow-x-auto border-b border-gray-800">
+        <button class="tab active" onclick="switchTab('welcome')">Welcome Home</button>
+        <button class="tab" onclick="switchTab('amenities')">Our Amenities</button>
+        <button class="tab" onclick="switchTab('dining')">Eat & Drink</button>
+        <button class="tab" onclick="switchTab('area')">Explore Local</button>
+        <button class="tab" onclick="switchTab('visiting')">Visiting The Park</button>
+        <button class="tab" onclick="switchTab('policies')">House Rules</button>
+        <button class="tab" onclick="switchTab('bookdirect')">🎉 Book Direct & Save</button>
+        <button class="tab" onclick="switchTab('feedback')">Share Your Thoughts</button>
+      </nav>
+      
+      <!-- Right Arrow Button -->
+      <button onclick="scrollNav(100)" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 p-2 rounded-full">
+        <!-- Right arrow SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--accent-color)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div class="space-y-8">
+      <!-- Welcome -->
+      <div id="welcome" class="tab-content active">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Wi‑Fi Card -->
+          <div class="card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+              </svg>
+              <h3 class="text-xl font-semibold">Wi‑Fi Access</h3>
+            </div>
+            <p class="text-gray-400">Password: guest123</p>
+            <!-- "Connect Now" Button to open WiFi settings -->
+            <a id="wifiConnect" href="App-Prefs:root=WIFI" class="inline-block mt-2 bg-[#e3902b] text-white font-bold py-2 px-4 rounded">
+              Connect Now
+            </a>
+          </div>
+          <!-- Check-in/out Card -->
+          <div class="card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <h3 class="text-xl font-semibold">Check‑in/out</h3>
+            </div>
+            <p class="text-gray-400 mb-2">Check‑in: 3:00 PM</p>
+            <p class="text-gray-400">Check‑out: 11:00 AM</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amenities -->
+      <div id="amenities" class="tab-content">
+        <div class="card p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 accent">Hotel Amenities</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-center">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M5 13l4 4L19 7"/>
+              </svg>
+              Free self‑parking
+            </li>
+            <li class="flex items-center">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M5 13l4 4L19 7"/>
+              </svg>
+              High‑speed Wi‑Fi
+            </li>
+            <li class="flex items-center">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M5 13l4 4L19 7"/>
+              </svg>
+              24/7 Front Desk
+            </li>
+          </ul>
+          <!-- Add-ons Section -->
+          <div class="mt-6">
+            <h4 class="text-lg font-semibold accent mb-2">Add-ons</h4>
+            <ul class="list-disc list-inside text-gray-400">
+              <li>Extra car: $20 plus tax</li>
+              <li>Parking after checkout: $20 plus tax</li>
+              <li>Rollaway bed: $20 plus tax</li>
+              <li>Late check‑out (12pm to 2pm): $25 plus tax</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dining -->
+      <div id="dining" class="tab-content">
+        <div class="card p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 accent">Dining Options</h3>
+          <div class="space-y-6 text-gray-400">
+            <div>
+              <h4 class="font-medium mb-2">Breakfast</h4>
+              <p>Continental breakfast served daily 6:30 AM - 9:30 AM</p>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2">Bars</h4>
+              <p>
+                Discover the best bars in the area for an exciting nightlife experience.
+                <a href="https://www.google.com/maps/search/?api=1&query=Best+Bars+Anaheim" target="_blank" class="hover:underline">
+                  View on Map
+                </a>
+              </p>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2">Restaurants</h4>
+              <p>
+                Explore a variety of restaurants offering local and international cuisines.
+                <a href="https://www.google.com/maps/search/?api=1&query=Restaurants+Anaheim" target="_blank" class="hover:underline">
+                  View on Map
+                </a>
+              </p>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2">Brunch Spots</h4>
+              <p>
+                Check out the top brunch spots for a delightful mid‑morning meal.
+                <a href="https://www.google.com/maps/search/?api=1&query=Brunch+Anaheim" target="_blank" class="hover:underline">
+                  View on Map
+                </a>
+              </p>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2">Cafés</h4>
+              <p>
+                Relax in charming cafés around the area.
+                <a href="https://www.google.com/maps/search/?api=1&query=Cafes+Anaheim" target="_blank" class="hover:underline">
+                  View on Map
+                </a>
+              </p>
+            </div>
+            <div>
+              <h4 class="font-medium mb-2">Additional Services</h4>
+              <p>24/7 coffee and tea in lobby</p>
+              <p>Local restaurant delivery available</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Explore Local / Area Guide -->
+      <div id="area" class="tab-content">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 accent">
+              <a href="https://www.google.com/maps/search/?api=1&query=Disneyland+Park" target="_blank" class="hover:underline">
+                Disneyland® Park
+              </a>
+            </h3>
+            <p class="text-gray-400 mb-2">Distance: 0.8 miles</p>
+            <p class="text-gray-400">Walking time: 15–20 minutes</p>
+          </div>
+          <div class="card p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 accent">
+              <a href="https://www.google.com/maps/search/?api=1&query=Anaheim+Convention+Center" target="_blank" class="hover:underline">
+                Anaheim Convention Center
+              </a>
+            </h3>
+            <p class="text-gray-400 mb-2">Distance: 1.2 miles</p>
+            <p class="text-gray-400">Walking time: 20–25 minutes</p>
+          </div>
+          <div class="card p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 accent">
+              <a href="https://www.google.com/maps/search/?api=1&query=Knotts+Berry+Farm" target="_blank" class="hover:underline">
+                Knott's Berry Farm
+              </a>
+            </h3>
+            <p class="text-gray-400 mb-2">Distance: 5 miles</p>
+            <p class="text-gray-400">Driving time: ~15 minutes</p>
+          </div>
+          <div class="card p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 accent">
+              <a href="https://www.google.com/maps/search/?api=1&query=Angel+Stadium+Anaheim" target="_blank" class="hover:underline">
+                Angel Stadium
+              </a>
+            </h3>
+            <p class="text-gray-400 mb-2">Distance: 2.5 miles</p>
+            <p class="text-gray-400">Driving time: ~10 minutes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visiting The Park -->
+      <div id="visiting" class="tab-content">
+        <div class="card p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 accent">Visiting The Park</h3>
+          <p class="text-gray-400 mb-4">
+            If you are visiting Disneyland, you have an option to park the car here in the morning, register at the front desk, and visit the park, which is just a 10-minute walk.
+          </p>
+          <p class="text-gray-400">
+            Please know that our pool is closed for remodeling until 23rd of this month.
+          </p>
+        </div>
+      </div>
+
+      <!-- House Rules -->
+      <div id="policies" class="tab-content">
+        <div class="card p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 accent">Hotel Policies</h3>
+          <ul class="space-y-4 text-gray-400">
+            <li class="flex items-center">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              100% smoke‑free property
+            </li>
+            <li class="flex items-center">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Pet‑free facility
+            </li>
+            <li class="flex items-center">
+              <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Valid ID and credit card required at check‑in
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 🎉 Book Direct & Save -->
+      <div id="bookdirect" class="tab-content">
+        <div class="card p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 accent">🎉 Book Direct & Save</h3>
+          <p class="text-gray-400 mb-4">
+            Remember that our best rates are always direct. Next time you plan to visit the area, just call or message us – or check the best rates on our website.
+          </p>
+          <a href="https://anaheimdiscoveryinn.com/" target="_blank" class="inline-block bg-[#e3902b] text-white font-bold py-2 px-4 rounded">
+            Book Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Share Your Thoughts with ✨ Icon -->
+      <div id="feedback" class="tab-content">
+        <div class="card p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4 accent">✨ Share Your Experience</h3>
+          <div class="w-full h-screen max-h-[800px] overflow-hidden rounded-lg">
+            <iframe
+              src="https://feedback.guesttouch.com/H8hTtrc9iu3hbvQ9S/write"
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="background-color: white;"
+              title="Feedback Form">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript to handle tab switching and nav scrolling -->
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.querySelector(`[onclick="switchTab('${tabId}')"]`).classList.add('active');
+  
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+    }
+    
+    // Function to scroll the navigation bar horizontally
+    function scrollNav(amount) {
+      const navBar = document.getElementById("navBar");
+      navBar.scrollBy({ left: amount, behavior: 'smooth' });
+    }
+    
+    // Set the WiFi Connect button's href based on device (basic detection)
+    document.addEventListener("DOMContentLoaded", function() {
+      const wifiButton = document.getElementById("wifiConnect");
+      if (navigator.userAgent.match(/Android/i)) {
+        wifiButton.href = "intent://settings#Intent;action=android.settings.WIFI_SETTINGS;end";
+      } else {
+        // For iOS and others – note that this may only work in certain contexts
+        wifiButton.href = "App-Prefs:root=WIFI";
+      }
+    });
+  </script>
+</body>
+</html>
