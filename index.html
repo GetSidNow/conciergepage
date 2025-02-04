@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anaheim Discovery Inn & Suites</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
   <style>
@@ -61,27 +62,34 @@
   </style>
 </head>
 <body class="min-h-screen p-4 md:p-8">
-  <!-- Fixed Top Bar with Hotel Name -->
+  <!-- Fixed Top Bar with Hotel Name (in white) -->
   <div class="fixed top-0 left-0 right-0 bg-black z-50 p-4 text-center border-b border-[var(--accent-color)]">
-    <h1 class="text-2xl font-bold text-[var(--accent-color)]">Anaheim Discovery Inn & Suites</h1>
+    <h1 class="text-2xl font-bold text-white">Anaheim Discovery Inn & Suites</h1>
   </div>
   
-  <!-- Main Container (reduced top padding so there's less space before the address) -->
+  <!-- Main Container (with slightly reduced top padding) -->
   <div class="max-w-4xl mx-auto pt-16">
-    <!-- Header Section -->
+    <!-- Header Section (Hotel title removed from here) -->
     <header class="text-center mb-8 animate__animated animate__fadeIn">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[var(--accent-color)] to-white">
-        Anaheim Discovery Inn & Suites
-      </h1>
-      <p class="text-lg text-gray-400 mb-2">1126 W Katella Ave, Anaheim, CA 92802</p>
-      <p class="text-lg text-gray-400 mb-4">(714) 533-4505</p>
-      <div class="text-lg mb-6">
-        We're so happy you chose to stay with us! We're here to help if there is anything we can do to make your stay just perfect!
+      <!-- The header no longer displays the hotel name again -->
+      <!-- Action Buttons for Address & Phone -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+        <!-- Text us Button -->
+        <a href="sms:+17145982308" class="inline-block text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
+          Text us
+        </a>
+        <!-- Call us Button -->
+        <a href="tel:+17145334505" class="inline-block text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
+          Call us
+        </a>
+        <!-- Direction Button -->
+        <a href="https://www.google.com/maps/dir/?api=1&destination=1126+W+Katella+Ave,+Anaheim,+CA+92802" target="_blank" class="inline-block text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
+          Direction
+        </a>
       </div>
-      <!-- "Message Us" Button using inline style to ensure the brand orange (#e3902b) is applied -->
-      <a href="sms:+17145982308" class="inline-block mt-4 text-white font-bold py-2 px-4 rounded" style="background-color: #e3902b;">
-        Message Us
-      </a>
+      <div class="text-lg mb-6">
+        We're so happy you chose to stay with us! At Anaheim Discovery Inn & Suites, you're not just a guest – you're family. Whether you're here to experience the magic of Disneyland or attend to business, our friendly team is here to ensure you feel right at home.
+      </div>
     </header>
 
     <!-- Navigation with Scroll Arrows -->
@@ -115,23 +123,23 @@
       </button>
     </div>
 
-    <!-- Content -->
+    <!-- Content Sections -->
     <div class="space-y-8">
-      <!-- Welcome -->
+      <!-- Welcome Section -->
       <div id="welcome" class="tab-content active">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Wi‑Fi Card -->
           <div class="card p-6 rounded-lg">
             <div class="flex items-center mb-4">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
               </svg>
               <h3 class="text-xl font-semibold">Wi‑Fi Access</h3>
             </div>
             <p class="text-gray-400">Password: guest123</p>
             <!-- "Connect Now" Button to open WiFi settings -->
-            <a id="wifiConnect" href="App-Prefs:root=WIFI" class="inline-block mt-2 bg-[#e3902b] text-white font-bold py-2 px-4 rounded">
+            <a id="wifiConnect" href="#" class="inline-block mt-2 bg-[#e3902b] text-white font-bold py-2 px-4 rounded">
               Connect Now
             </a>
           </div>
@@ -139,8 +147,8 @@
           <div class="card p-6 rounded-lg">
             <div class="flex items-center mb-4">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               <h3 class="text-xl font-semibold">Check‑in/out</h3>
             </div>
@@ -150,29 +158,29 @@
         </div>
       </div>
 
-      <!-- Amenities -->
+      <!-- Amenities Section (Pool notice moved here) -->
       <div id="amenities" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">Hotel Amenities</h3>
           <ul class="space-y-4 text-gray-400">
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M5 13l4 4L19 7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"/>
               </svg>
               Free self‑parking
             </li>
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M5 13l4 4L19 7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"/>
               </svg>
               High‑speed Wi‑Fi
             </li>
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M5 13l4 4L19 7"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 13l4 4L19 7"/>
               </svg>
               24/7 Front Desk
             </li>
@@ -187,10 +195,14 @@
               <li>Late check‑out (12pm to 2pm): $25 plus tax</li>
             </ul>
           </div>
+          <!-- Pool Notice -->
+          <p class="text-gray-400 mt-4">
+            Please know that our pool is closed for remodeling until 23rd of this month.
+          </p>
         </div>
       </div>
 
-      <!-- Dining -->
+      <!-- Dining Section -->
       <div id="dining" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">Dining Options</h3>
@@ -244,7 +256,7 @@
         </div>
       </div>
 
-      <!-- Explore Local / Area Guide -->
+      <!-- Explore Local / Area Guide Section -->
       <div id="area" class="tab-content">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="card p-6 rounded-lg">
@@ -286,42 +298,39 @@
         </div>
       </div>
 
-      <!-- Visiting The Park -->
+      <!-- Visiting The Park Section (pool notice removed here) -->
       <div id="visiting" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">Visiting The Park</h3>
           <p class="text-gray-400 mb-4">
             If you are visiting Disneyland, you have an option to park the car here in the morning, register at the front desk, and visit the park, which is just a 10-minute walk.
           </p>
-          <p class="text-gray-400">
-            Please know that our pool is closed for remodeling until 23rd of this month.
-          </p>
         </div>
       </div>
 
-      <!-- House Rules -->
+      <!-- House Rules Section -->
       <div id="policies" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">Hotel Policies</h3>
           <ul class="space-y-4 text-gray-400">
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               100% smoke‑free property
             </li>
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               Pet‑free facility
             </li>
             <li class="flex items-center">
               <svg class="icon mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
               Valid ID and credit card required at check‑in
             </li>
@@ -329,7 +338,7 @@
         </div>
       </div>
 
-      <!-- 🎉 Book Direct & Save -->
+      <!-- 🎉 Book Direct & Save Section -->
       <div id="bookdirect" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">🎉 Book Direct & Save</h3>
@@ -342,7 +351,7 @@
         </div>
       </div>
 
-      <!-- Share Your Thoughts with ✨ Icon -->
+      <!-- Share Your Thoughts Section with ✨ Icon -->
       <div id="feedback" class="tab-content">
         <div class="card p-6 rounded-lg">
           <h3 class="text-xl font-semibold mb-4 accent">✨ Share Your Experience</h3>
@@ -361,7 +370,7 @@
     </div>
   </div>
   
-  <!-- JavaScript to handle tab switching and nav scrolling -->
+  <!-- JavaScript for Tab Switching, Navigation Scrolling, and Wi-Fi Button -->
   <script>
     function switchTab(tabId) {
       document.querySelectorAll('.tab').forEach(tab => {
@@ -384,11 +393,15 @@
     // Set the WiFi Connect button's href based on device (basic detection)
     document.addEventListener("DOMContentLoaded", function() {
       const wifiButton = document.getElementById("wifiConnect");
-      if (navigator.userAgent.match(/Android/i)) {
+      if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+        // iOS: may work in some contexts; note that Safari often blocks such links.
+        wifiButton.href = "App-Prefs:root=WIFI";
+      } else if (navigator.userAgent.match(/Android/i)) {
+        // Android: open WiFi settings via intent
         wifiButton.href = "intent://settings#Intent;action=android.settings.WIFI_SETTINGS;end";
       } else {
-        // For iOS and others – note that this may only work in certain contexts
-        wifiButton.href = "App-Prefs:root=WIFI";
+        // Fallback for other devices
+        wifiButton.href = "#";
       }
     });
   </script>
